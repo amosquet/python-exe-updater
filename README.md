@@ -10,6 +10,9 @@
  and run the actual updating functions as its own independent application initially launched by your main program.
 
 Clearer explaination of how this should be used:
+ 
  Check for updates in main program.
+ 
  Main program launches a separate application, if it is out of date, then kills itself
+ 
  This separate application then downloads the new version, cleans up and launches the new version, then kills itself (updater kills itself).
