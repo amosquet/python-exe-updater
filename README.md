@@ -3,6 +3,7 @@
 
 
  RESTupdate.py contains a current, mostly, working build of the updater
+ 
  Rtest.py is an example of how to implement RESTupdate in an updater.
  NOTE: You would not have all of the code in Rtest be in your main program, it would be wiser to call the update check within your program
  and run the actual updating functions as its own independent application initially launched by your main program.
