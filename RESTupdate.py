@@ -18,7 +18,7 @@ def get_latest_version(repow):
 
     return latest_version
 
-#check if there are updates available for the program
+#check if there are updates available for the program. "True" means out-of-date
 def check(current_version, repow):
 
     latest_version = get_latest_version(repow)
@@ -41,9 +41,17 @@ def cleanup(file, update_folder):
     dir = directory() #get the current directory of the program
     shutil.move(update_folder+"/"+file, dir) #move the updated program, file, from the temporary directory to the original directory
 
-    shutil.rmtree(update_folder, ignore_errors=True) #delete the temporary directory
+#    shutil.rmtree(update_folder, ignore_errors=True) #delete the temporary directory
 
     #restart the program
     # os.system("python3 "+file) #for python files
     #run executable file
-    os.system(file) #for executable files
+ #   os.system(file) #for executable files
+
+#should restart the updated program then kill the old version.
+def py_restart(file):
+     subprocess.run(['python', file]) #for restarting python files
+     sys.exit()
+def exe_restart(file):
+    subprocess.run([file]) #for restarting executables
+    sys.exit()
