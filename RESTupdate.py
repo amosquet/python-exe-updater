@@ -2,6 +2,7 @@ import requests
 import subprocess
 import os
 import shutil
+import sys
 
 #get the current directory of the program
 def directory():

@@ -18,14 +18,13 @@ dir = rup.directory() #get the current directory of the program, used for
 #check if there are updates available for the program
 if rup.check(current_version, repow): #True means out-of-date
     print("Updates available") #maybe temporary
-    # user = get_user()
     rup.create_dir(update_folder)
-    # update(repow)
     rup.clone(repow, update_folder)
     rup.cleanup(file, update_folder)
-    rup.py_restart(file) #for restarting python scripts
-    run.exe_restart(file) #for restarting executables
     print("Update successful") #maybe temporary
+    rup.py_restart(file) #for restarting python scripts
+    # rup.exe_restart(file) #for restarting executables
+
 else:
     print("No updates")
 
